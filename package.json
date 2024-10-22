@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon src/interface.ts"
+    "dev": "nodemon src/produto.ts"
   },
   "keywords": [],
   "author": "",
