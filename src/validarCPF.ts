@@ -8,12 +8,12 @@ function validarCPF(cpf: string){
     let digitoVerificador: Number = 0;
     let verificadorPrimeiro = [10, 9, 8, 7, 6, 5, 4, 3, 2];
     let cpfNumber = cpf.split('').map(Number).slice(0, 9);
-    let somaPrimeiro = 0;
+    let somaPrimeiro: number = 0;
 
     for(let i = 0 ; i <= verificadorPrimeiro.length - 1 ; i ++){
-        let multiplicaPrimeiro = cpfNumber[i] * verificadorPrimeiro [i];
+        let multiplicaPrimeiro: number = cpfNumber[i] * verificadorPrimeiro [i];
         //somaPrimeiro = multiplicaPrimeiro + somaPrimeiro; 
-        somaPrimeiro = somaPrimeiro + multiplicaPrimeiro;   
+        somaPrimeiro = (somaPrimeiro + multiplicaPrimeiro);   
     }
 
     somaPrimeiro = somaPrimeiro % 11;
@@ -37,10 +37,9 @@ function validarCPF(cpf: string){
     cpfNumber.push(somaSegundo);
     console.log(cpfNumber)
 
-    /*if(somaPrimeiro == cpf[9] && somaSegundo == cpf[10]){
-
-    }*/
-
+    if(somaPrimeiro == cpfNumber[9] && somaSegundo == cpfNumber[10]){
+        console.log("It is valid!");
+    }
 }
 
 validarCPF(cpf);
