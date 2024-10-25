@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "aula-1-ts": "file:",
     "ts-node": "^10.9.2"
   }
 }

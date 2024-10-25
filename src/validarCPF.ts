@@ -1,11 +1,7 @@
-let cpf: string = "71633057291";
-//cpf.split('').map(Number);
-//console.log(cpf[5]);
-
+let cpf: string = "52149730200";
 
 function validarCPF(cpf: string){
 
-    let digitoVerificador: Number = 0;
     let verificadorPrimeiro = [10, 9, 8, 7, 6, 5, 4, 3, 2];
     let cpfNumber = cpf.split('').map(Number).slice(0, 9);
     let somaPrimeiro: number = 0;
@@ -18,7 +14,10 @@ function validarCPF(cpf: string){
 
     somaPrimeiro = somaPrimeiro % 11;
     somaPrimeiro = 11 - somaPrimeiro;
-    console.log(somaPrimeiro) 
+    if(somaPrimeiro >= 10){
+        somaPrimeiro = 0;
+    }
+    //console.log(somaPrimeiro) 
 
     cpfNumber.push(somaPrimeiro);
     console.log(cpfNumber)
@@ -33,23 +32,47 @@ function validarCPF(cpf: string){
 
     somaSegundo = somaSegundo % 11;
     somaSegundo = 11 - somaSegundo;
+    if(somaSegundo >= 10){
+        somaSegundo = 0;
+    }
     
     cpfNumber.push(somaSegundo);
     console.log(cpfNumber)
 
-    if(somaPrimeiro == cpfNumber[9] && somaSegundo == cpfNumber[10]){
+    let primeiro = somaPrimeiro.toString();
+    let segundo = somaSegundo.toString();
+
+    if(primeiro == cpf[9] && segundo == cpf[10]){
         console.log("It is valid!");
+    }
+    else{
+        console.log("It is not valid!")
     }
 }
 
 validarCPF(cpf);
+
+//cpf.split('').map(Number);
+//console.log(cpf[5]);
+
+// let cpfVerificar = cpf.toString()
+// console.log(cpfVerificar);
 
 //posso apenas verificar se os digitos são iguais, sem precisar do push e dividir o array
 
 
 
 
+// let cpfNumberVerificar = cpfNumber.toString();
+    // cpfNumberVerificar.split('').reverse().join('');
+    // console.log(cpfNumberVerificar)
 
+    // if(cpfNumberVerificar == cpfVerificar){
+    //     console.log("It is valid!");
+    // }
+    // else{
+    //     console.log("It's not valid!")
+    // }
 
 
 
