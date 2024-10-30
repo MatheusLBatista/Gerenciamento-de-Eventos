@@ -44,3 +44,51 @@ function validarCPF(cpf: string){
 }
 
 validarCPF(cpf);
+
+function estadoCPF(cpf: string){
+    if (cpf.length !== 11) {
+        return "CPF inválido!";
+    }
+
+    let estado: string = '';
+
+    switch (cpf[8]) {
+        case "0":
+            estado = "Rio Grande do Sul";
+            break;
+        case "1":
+            estado = "Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul e Tocantins";
+            break;
+        case "2":
+            estado = "Amazonas, Pará, Roraima, Amapá, Acre e Rondônia";
+            break;
+        case "3":
+            estado = "Ceará, Maranhão e Piauí";
+            break;
+        case "4":
+            estado = "Paraíba, Pernambuco, Alagoas e Rio Grande do Norte";
+            break;
+        case "5":
+            estado = "Bahia e Sergipe";
+            break;
+        case "6":
+            estado = "Minas Gerais";
+            break;
+        case "7":
+            estado = "Rio de Janeiro e Espírito Santo";
+            break;
+        case "8":
+            estado = "São Paulo";
+            break;
+        case "9":
+            estado = "Paraná e Santa Catarina";
+            break;
+        default:
+            estado = "Estado desconhecido";
+            break;
+    }
+
+    return estado;
+}
+
+console.log(estadoCPF(cpf));
