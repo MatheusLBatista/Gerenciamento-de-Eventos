@@ -43,8 +43,6 @@ function validarCPF(cpf: string){
     }
 }
 
-validarCPF(cpf);
-
 function estadoCPF(cpf: string){
     if (cpf.length !== 11) {
         return "CPF inválido!";
@@ -88,7 +86,8 @@ function estadoCPF(cpf: string){
             break;
     }
 
-    return estado;
+    console.log("O estado do CPF é: " + estado);
 }
 
-console.log(estadoCPF(cpf));
+validarCPF(cpf);
+estadoCPF(cpf);
