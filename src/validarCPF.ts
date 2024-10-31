@@ -1,9 +1,10 @@
 let cpf: string = "01162809213";
 
-function validarCPF(cpf: string){
+function validarCPF(cpf: string): boolean{
 
+    //Length validation
     if(cpf.length !== 11){
-        console.log("CPF inválido!");
+        console.log("CPF inválido, pois o número de caracteres é diferente de 11.");
         return false;
     }
 
@@ -16,8 +17,7 @@ function validarCPF(cpf: string){
         somaPrimeiro += multiplicaPrimeiro;
     }
 
-    somaPrimeiro = somaPrimeiro % 11;
-    somaPrimeiro = 11 - somaPrimeiro;
+    somaPrimeiro = 11 - (somaPrimeiro % 11);
     somaPrimeiro = somaPrimeiro >= 10 ? somaPrimeiro = 0 : somaPrimeiro;
 
     cpfNumber.push(somaPrimeiro);
@@ -27,8 +27,7 @@ function validarCPF(cpf: string){
         somaSegundo += multiplicaSegundo;
     }
 
-    somaSegundo = somaSegundo % 11;
-    somaSegundo = 11 - somaSegundo;
+    somaSegundo = 11 - (somaSegundo % 11);
     somaSegundo = somaSegundo >= 10 ? somaSegundo = 0 : somaSegundo;
   
     cpfNumber.push(somaSegundo);
