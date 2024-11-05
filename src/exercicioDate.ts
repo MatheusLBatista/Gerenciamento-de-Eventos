@@ -7,7 +7,7 @@ interface Estudante {
         bairro: string
     },
     cidade: string[],
-    uf: string[],
+    uf: UF,
     dataNascimento: Date,
     dataCadastro: Date
 }
@@ -19,6 +19,34 @@ enum TiposLogradouro{
     condominio = "Condomínio"
 }
 
+enum UF {
+    Acre = "AC",
+    Alagoas = "AL",
+    Amapa = "AP",
+    Amazonas = "AM",
+    Bahia = "BA",
+    Ceara = "CE",
+    EspiritoSanto = "ES",
+    Goias = "GO",
+    Maranhao = "MA",
+    MatoGrosso = "MT",
+    MatoGrossoDoSul = "MS",
+    MinasGerais = "MG",
+    Para = "PA",
+    Paraiba = "PB",
+    Pernambuco = "PE",
+    Piaui = "PI",
+    RioDeJaneiro = "RJ",
+    RioGrandeDoNorte = "RN",
+    RioGrandeDoSul = "RS",
+    Rondonia = "RO",
+    Roraima = "RR",
+    SantaCatarina = "SC",
+    SaoPaulo = "SP",
+    Sergipe = "SE",
+    Tocantins = "TO"
+}
+
 let estudante: Estudante = {
     nome: "Matheus Lucas Batista",
     endereco: {
@@ -28,7 +56,7 @@ let estudante: Estudante = {
         bairro: "Jardim Araucária"
         },
         cidade: ["Vilhena"],
-        uf: ["RO"],
+        uf: UF.Rondonia,
         dataNascimento: new Date("2005-02-15"),
         dataCadastro: new Date()
 };
