@@ -6,8 +6,7 @@ interface Estudante {
         numero: string,
         bairro: string
     },
-    cidade: string[],
-    uf: UF,
+    cidade: Cidade,
     dataNascimento: Date,
     dataCadastro: Date
 }
@@ -47,25 +46,39 @@ enum UF {
     Tocantins = "TO"
 }
 
+interface Cidade {
+    nome: string,
+    uf: UF
+}
+
+let vilhena: Cidade = {
+    nome: "Vilhena",
+    uf: UF.Rondonia
+}
+
+let ariquemes: Cidade = {
+    nome: "Ariquemes",
+    uf: UF.Rondonia
+}
+
 let estudante: Estudante = {
     nome: "Matheus Lucas Batista",
+    dataNascimento: new Date("2005-02-15"),
     endereco: {
         tipoLogradouro: TiposLogradouro.avenida,
         logradouro: "622",
         numero: "7426",
         bairro: "Jardim Araucária"
         },
-        cidade: ["Vilhena"],
-        uf: UF.Rondonia,
-        dataNascimento: new Date("2005-02-15"),
-        dataCadastro: new Date()
+    cidade: vilhena,
+    dataCadastro: new Date()
 };
 
 console.log(`
         Nome: ${estudante.nome}
         Endereco: ${estudante.endereco.tipoLogradouro} ${estudante.endereco.logradouro}, N°${estudante.endereco.numero}, Bairro ${estudante.endereco.bairro}
-        Cidade: ${estudante.cidade},
-        UF: ${estudante.uf},
+        Cidade: ${estudante.cidade.nome },
+        UF: ${estudante.cidade.uf},
         Nascimento: ${estudante.dataNascimento.getDate() + 1} / ${estudante.dataNascimento.getMonth() + 1} / ${estudante.dataNascimento.getFullYear()},
         Data de Cadastro: ${estudante.dataCadastro.getDate()} / ${estudante.dataCadastro.getMonth() + 1} / ${estudante.dataCadastro.getFullYear()}
     `)
