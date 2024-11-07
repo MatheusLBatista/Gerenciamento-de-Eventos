@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon src/exercicioDate.ts"
+    "dev": "nodemon src/gerenciarCompromisso.ts"
   },
   "keywords": [],
   "author": "",
