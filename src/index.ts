@@ -5,3 +5,5 @@ let e1: Estudante = {
     email : "maria@gmail.com",
     telefone : "(69) 99999-9999"
 }
+
+console.log(e1);
