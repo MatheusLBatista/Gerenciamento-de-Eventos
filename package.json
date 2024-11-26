@@ -2,11 +2,9 @@
   "name": "estudante",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon src/gerenciarCompromisso.ts",
-    "dev2": "tsx watch src/index.ts"
+    "dev": "nodemon src/gerenciarUsers.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +13,10 @@
   "dependencies": {
     "aula-1-ts": "file:",
     "ts-node": "^10.9.2",
-    "tsx": "^4.19.2"
+    "tsx": "^4.19.2",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "@types/uuid": "^10.0.0"
   }
 }
