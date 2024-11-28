@@ -26,4 +26,10 @@ let users: User[] = [
     createUser("Danielle", Role.guest)
 ]; 
 
+function filter(papel: Role): User[] {
+    return users.filter(users => users.role == papel);
+}
+
 console.log(users);
+console.log(filter(Role.guest));
+

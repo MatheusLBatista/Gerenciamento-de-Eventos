@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon src/gerenciarUsers.ts"
+    "dev": "nodemon src/gerenciarEvento.ts"
   },
   "keywords": [],
   "author": "",
