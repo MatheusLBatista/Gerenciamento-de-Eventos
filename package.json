@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon src/gerenciarEvento.ts"
+    "dev": "nodemon src/readFile.ts",
+    "dev2": "tsx watch src/fileManipulation.ts"
   },
   "keywords": [],
   "author": "",
