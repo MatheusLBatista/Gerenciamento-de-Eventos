@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon src/services/usuarioService.ts",
-    "dev2": "tsx watch src/services/usuarioService.ts"
+    "dev": "nodemon src/index.ts",
+    "dev2": "tsx watch src/models/usuario.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,8 @@
     "aula-1-ts": "file:",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
-    "uuid": "^11.0.3"
+    "uuid": "^11.0.3",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@types/uuid": "^10.0.0"
