@@ -53,8 +53,8 @@ export async function menuEventos() {
     try {
       const { nome, dataHora, idUsuario } = await inquirer.prompt([
         { type: "input", name: "nome", message: "Nome do evento:" },
-        { type: "input", name: "dataHora", message: "Data e Hora do evento:" },
-        { type: "number", name: "idUsuario", message: "ID do Usuário:" },
+        { type: "input", name: "dataHora", message: "Data e Hora do evento (DD/MM/YYYY HH:MM):" },
+        { type: "number", name: "idUsuario", message: "ID do Usuário pelo cadastro:" },
       ]);
 
       EventSchema.parse({ nome, dataHora, idUsuario });
@@ -84,7 +84,7 @@ export async function menuEventos() {
       const db = await dbPromise;
       const eventos = await db.all("SELECT * FROM evento");
       const { idUsuario } = await inquirer.prompt([
-        { type: "number", name: "idUsuario", message: "ID do Usuário responsável:" },
+        { type: "number", name: "idUsuario", message: "ID do Usuário responsável pela busca:" },
       ]);
 
       console.log("\nLista de Eventos:");
@@ -105,7 +105,7 @@ export async function menuEventos() {
         { type: "number", name: "id", message: "ID do evento:" },
       ]);
       const { idUsuario } = await inquirer.prompt([
-        { type: "number", name: "idUsuario", message: "ID do Usuário responsável:" },
+        { type: "number", name: "idUsuario", message: "ID do Usuário responsável pela busca:" },
       ]);
 
       const db = await dbPromise;
@@ -140,7 +140,7 @@ export async function menuEventos() {
       const { nome, dataHora, idUsuario } = await inquirer.prompt([
         { type: "input", name: "nome", message: "Novo nome:", default: evento.nome },
         { type: "input", name: "dataHora", message: "Nova data:", default: evento.dataHora },
-        { type: "input", name: "idUsuario", message: "ID do usuário responsável:", default: evento.idUsuario },
+        { type: "input", name: "idUsuario", message: "ID do usuário responsável pela edição:", default: evento.idUsuario },
       ]);
 
       await db.run("UPDATE evento SET nome = ?, dataHora = ? WHERE idEvento = ?", [
@@ -160,7 +160,7 @@ export async function menuEventos() {
     try {
       const { id, idUsuario } = await inquirer.prompt([
         { type: "number", name: "id", message: "ID do evento:" },
-        { type: "input", name: "idUsuario", message: "ID do usuário responsável:"},
+        { type: "input", name: "idUsuario", message: "ID do usuário responsável pela exclusão:"},
       ]);
 
       const db = await dbPromise;

@@ -1,6 +1,4 @@
 import dbPromise from "../index";
-import { EventSchema } from "../validation/eventoValidation";
-import { registrarLog } from "../logs/eventoLog";
 
 export async function criarEvento() {
     const db = await dbPromise;
@@ -15,4 +13,3 @@ export async function criarEvento() {
         )`
     );
 }
-criarEvento();

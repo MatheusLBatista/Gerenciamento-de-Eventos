@@ -20,5 +20,3 @@ export async function seedEventos(quantidade: number = 10) {
         console.error("Erro ao inserir eventos:", error);
     }
 }
-
-seedEventos();

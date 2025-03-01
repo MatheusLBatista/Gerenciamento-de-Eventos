@@ -4,6 +4,11 @@ import { menuEventos } from "./controller/eventController";
 import sqlite3 from "sqlite3";
 import { open, Database } from "sqlite";
 import { listarLogs } from "./controller/logController";
+import { seedEventos } from "./seeds/eventoSeed";
+import { seedUsuarios } from "./seeds/usuarioSeed";
+import { criarEvento } from "./services/eventoService";
+import { criarLogs } from "./services/logService";
+import { criarUsuario } from "./services/userService";
 
 const dbPromise = open({
     filename: "./data/database.sqlite",
@@ -12,6 +17,7 @@ const dbPromise = open({
 
 export default dbPromise;
 
+//PARA ACESSAR, BASTA LOGAR COMO 'admin' E ADICIONAR A SENHA '12345'
 const usuarioAdmin = { login: "admin", senha: "12345" };
 
 async function menuPrincipal() {
@@ -65,6 +71,10 @@ async function realizarLogin() {
     }
 }
 
+seedEventos();
+seedUsuarios();
+criarEvento();
+criarLogs();
+criarUsuario();
 realizarLogin();
   
-

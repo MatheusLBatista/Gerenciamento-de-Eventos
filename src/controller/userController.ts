@@ -52,7 +52,7 @@ async function cadastrarUsuario() {
       { type: "input", name: "nome", message: "Nome do usuário:" },
       { type: "input", name: "email", message: "E-mail do usuário:" },
       { type: "password", name: "senha", message: "Senha do usuário:" },
-      { type: "input", name: "idUsuario", message: "ID do usuário responsável:"},
+      { type: "input", name: "idUsuario", message: "ID do usuário responsável pelo cadastro:"},
     ]);
 
     UserSchema.parse({ nome, email, senha });
@@ -88,7 +88,7 @@ async function listarUsuarios() {
 
 async function buscarUsuarioPorId() {
   try {
-    const { id } = await inquirer.prompt([{ type: "number", name: "id", message: "ID do usuário:" }]);
+    const { id } = await inquirer.prompt([{ type: "number", name: "id", message: "ID do usuário pela busca:" }]);
     const db = await dbPromise;
     const usuario = await db.get("SELECT * FROM usuario WHERE idUsuario = ?", [id]);
 
@@ -107,7 +107,7 @@ async function editarUsuario() {
   try {
     const { id, idUsuario } = await inquirer.prompt([
       { type: "number", name: "id", message: "ID do usuário:" },
-      { type: "input", name: "idUsuario", message: "ID do usuário responsável:"},
+      { type: "input", name: "idUsuario", message: "ID do usuário responsável pela busca:"},
     ]);
     const db = await dbPromise;
     const usuario = await db.get("SELECT * FROM usuario WHERE idUsuario = ?", [id]);
@@ -137,7 +137,7 @@ async function deletarUsuario() {
   try {
     const { id, idUsuario } = await inquirer.prompt([
       { type: "number", name: "id", message: "ID do usuário:" },
-      { type: "input", name: "idUsuario", message: "ID do usuário responsável:"},  
+      { type: "input", name: "idUsuario", message: "ID do usuário responsável pela exclusão:"},  
     ]);
     const db = await dbPromise;
     const result = await db.run("DELETE FROM usuario WHERE idUsuario = ?", [id]);

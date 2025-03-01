@@ -1,6 +1,5 @@
 import dbPromise from "..";
 
-// Função para listar logs
 export async function listarLogs() {
     const db = await dbPromise;
     const logs = await db.all("SELECT * FROM logs");

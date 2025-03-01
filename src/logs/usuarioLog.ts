@@ -1,6 +1,7 @@
 import { z } from "zod";
 import dbPromise from "../index";
 import { v4 as uuid } from "uuid";
+
 export interface usuarioLog {
     id: string;
     usuario_id: number;

@@ -20,5 +20,3 @@ export async function seedUsuarios(quantidade: number = 10) {
         console.error("Erro ao inserir usuários:", error);
     }
 }
-
-seedUsuarios();
